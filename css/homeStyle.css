@@ -61,9 +61,8 @@
   height: 20rem;
   width: 20rem;
   border: 0.2rem solid;
-  overflow-y: auto;
-  box-sizing: border-box;
   display: none;
+  z-index: 5;
 }
 .mainContainer .notificationTab .header {
   position: absolute;
@@ -71,6 +70,10 @@
   width: 100%;
   text-align: center;
   line-height: 4rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  background: white;
+  border-bottom: 2px solid #0d47a1;
 }
 .mainContainer .notificationTab .header .count {
   position: absolute;
@@ -98,8 +101,11 @@
 .mainContainer .notificationTab .notificationContainer .notification {
   position: relative;
   height: 4rem;
-  width: 100%;
-  border-bottom: 1px solid gold;
+  line-height: 4rem;
+  padding-left: 0.5rem;
+  font-size: 1.4rem;
+  border-bottom: 1px solid #0d47a1;
+  overflow: hidden;
 }
 .mainContainer .overlay {
   position: absolute;

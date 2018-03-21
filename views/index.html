@@ -14,34 +14,10 @@
             <img src="http://d9hhrg4mnvzow.cloudfront.net/www.engineer.ai/22f3799e-e-ai-white.png" alt="engineer.ai logo" class="logo">
             <img src="../images/bell.png" class="bell" alt="" srcset="">
             <div class="count">
-                12
+
             </div>
         </div>
-        <div class="notificationTab">
-            <div class="header">
-                New Notifications
-                <div class="count">
-                    
-                </div>
-            </div>
-            <div class="notificationContainer">
-                <div class="notification">
-                    Hi! This is a demo notification
-                </div>
-                <div class="notification">
-                    Hi! This is a demo notification
-                </div>
-                <div class="notification">
-                    Hi! This is a demo notification
-                </div>
-                <div class="notification">
-                        Hi! This is a demo notification
-                    </div>
-                    <div class="notification">
-                            Hi! This is a demo notification
-                        </div>
-            </div>
-        </div>
+        <div class="notificationTab"></div>
 
         <div class="overlay">
         </div>
@@ -56,7 +32,7 @@
         </div>
         <div class="useCaseContainer">
             <div class="useCase">
-                <textarea class="textBox" placeholder="Enter the content that goes inside the popup here..."></textarea>
+                <textarea class="textBox modal" placeholder="Enter the content that goes inside the popup here..."></textarea>
                 <div class="instructions">
                     <div class="instruction">
                         You can add valid html content in this text box to load that in the popup
@@ -66,7 +42,20 @@
                     </div>
                 </div>
                 <div class="buttonContainer">
-                    <div class="button">
+                    <div class="button modal">
+                        Submit
+                    </div>
+                </div>
+            </div>
+            <div class="useCase">
+                <textarea class="textBox notification" placeholder="Enter the content that goes inside the notification here..." maxlength="20"></textarea>
+                <div class="instructions">
+                    <div class="instruction">
+                        To push the default content just tap the button
+                    </div>
+                </div>
+                <div class="buttonContainer">
+                    <div class="button notification">
                         Submit
                     </div>
                 </div>
@@ -81,8 +70,24 @@
 </body>
 
 <script type="text/javascript" src="../scripts/jquery.js"></script>
+<script type="text/javascript" src="../scripts/jsrender.js "></script>
+<script type="text/javascript" src="../scripts/jsviews.js "></script>
 <script type="text/javascript" src="../js/base.js"></script>
+<script type="text/javascript" src="../js/data.js"></script>
 <script type="text/javascript" src="../js/index.js"></script>
-
-
+<script id="notificationTemplate" type="text/x-jsrender">
+    <div class="header">
+        Notifications
+        <div class="count">
+            {^{:count}}
+        </div>
+    </div>
+    <div class="notificationContainer">
+        {{for notifications}}
+        <div class="notification">
+          {{:notificationText}}  
+        </div>
+        {{/for}}
+    </div>
+</script>
 </html>
